@@ -1,4 +1,4 @@
-# Calculadora-de-m-dias.
+# Calculadora de médias.
 Calculadora web desenvolvida com HTML, CSS e JavaScript, feita para calcular a mídia entre os números que adicionam.
 Um mini sistema em HTML + JavaScript para notas adicionais, removedor individual, cálculo médio e redefinir os dados.
 
