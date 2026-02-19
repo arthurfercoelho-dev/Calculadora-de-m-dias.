@@ -1,33 +1,68 @@
-function inserirNoDisplay(data){
-    document.querySelector('#display').value += data;
-}
+let notas = []; // armazena todas as notas
 
-function apagartudo(){
-    document.querySelector('#display').value = ""
-}
+function adicionarNota () {
+  let input = document.getElementById('nota');
+  let valor = Number(input.value);
 
-function apagar(){
-    const display = document.querySelector('#display')
-    display.value = display.value.slice(0, -1)
-}
-
-function resultado() {
-    const display = document.querySelector('#display');
-
-    if (display.value.trim() === "") {
-        return;
+  if(valor === '' || isNaN(valor)){
+    alert("Digite uma nota válida");
+    return;
     }
 
-    try {
-        const conta = eval(display.value);
+notas.push(valor);
 
-        if (conta === undefined) {
-            display.value = "";
-        } else {
-            display.value = conta;
-        }
+atualizarLista();
+input.value = '';
 
-    } catch (e) {
-        display.value = "Erro";
-    }
+}
+
+function atualizarLista() {
+  let lista = document.getElementById('notas');
+  lista.innerHTML = '';
+
+  for (let i = 0; i < notas.length; i++) {
+    let item = document.createElement('li');
+    item.textContent = `Nota: ${notas[i]}`;
+
+    item.onclick = function () {
+      notas.splice(i, 1);
+      atualizarLista();
+    } 
+    lista.appendChild(item);
+  }
+}
+
+function calcularMedia() {
+  if(notas.length === 0) {
+    alert("Adicione pelo menos uma nota!");
+    return;
+  }
+
+  let somatorioNotas = 0;
+
+  for (let i = 0; i < notas.length; i++) {
+    somatorioNotas += notas[i];
+  }
+
+  let media = somatorioNotas / notas.length;
+  const resultado = document.getElementById('resultado');
+
+  if (media >= 6) {
+    resultado.textContent = `Média: ${media.toFixed(2)} → Aprovada`;
+    resultado.style.color = "green";
+  } else {
+    resultado.textContent = `Média: ${media.toFixed(2)} → Reprovada`;
+    resultado.style.color = "red";
+  }
+
+  // limpa tudo após mostrar o resultado
+  notas = [];
+  document.getElementById('notas').innerHTML = '';
+}
+
+function resetarNota() {
+  notas = [];
+  atualizarLista(); 
+  document.getElementById('resultado').textContent = '';
+  document.getElementById('nota').value = '';
 }
