@@ -1,52 +1,57 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: gray;
-    font-family: Arial, sans-serif;
-    background-size: cover;
-}
-.calculadora {
-    height: 250px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: bisque;
-}
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-#display {
-    width: 100%;
-    box-sizing: border-box;
-    height: 50px;
-    border-radius: 10px;
-    text-align: right;
-    font-size: 20px;
-    margin-bottom: 16px;
-}
-.button_box {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
+        .calculator {
+            background: #fff;
+            padding: 25px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            text-align: center;
+        }
 
+        input {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
 
-button {
-    border: none;
-    border-radius: 5px;
-    height: 30px;
-    font-size: 20px;
-}
+        .button {
+            padding: 8px 15px;
+            background: #006eff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
 
-button:hover {
-    background-color: rgb(248, 209, 161);
-    transition: 900ms;
-    cursor: pointer;
-}
+        .button:hover {
+            background: #004bb5;
+        }
 
-.btn_igual {
-    background-color: orange;
-    color: white;
-}
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e7eaff;
+            margin: 5px 0;
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        #resultado {
+            font-size: 20px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
