@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculadora">
+        <input type="text" id="display" disabled>
+        <div class="button_box">
+
+<button onclick="apagartudo()">AC</button>
+<button onclick="apagar()">&lt;</button>
+<button onclick="inserirNoDisplay('/')">/</button>
+<button onclick="inserirNoDisplay('*')">*</button>
+
+<button onclick="inserirNoDisplay('7')">7</button>
+<button onclick="inserirNoDisplay('8')">8</button>
+<button onclick="inserirNoDisplay('9')">9</button>
+<button onclick="inserirNoDisplay('-')">-</button>
+
+<button onclick="inserirNoDisplay('4')">4</button>
+<button onclick="inserirNoDisplay('5')">5</button>
+<button onclick="inserirNoDisplay('6')">6</button>
+<button onclick="inserirNoDisplay('+')">+</button>
+
+<button onclick="inserirNoDisplay('1')">1</button>
+<button onclick="inserirNoDisplay('2')">2</button>
+<button onclick="inserirNoDisplay('3')">3</button>
+<button class="btn_zero" onclick="inserirNoDisplay('0')">0</button>
+
+<button onclick="inserirNoDisplay('.')">.</button>
+<button class="btn_igual" onclick="resultado()">=</button>
+
+
+</div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
